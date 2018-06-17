@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">Spotif</string>
+    <string name="label_find">Procure seu artista</string>
+    <string name="button_find">Procurar</string>
+    <string name="hint_input">Digite o nome do artista</string>
+</resources>

@@ -4,4 +4,6 @@
     <string name="label_find">Procure seu artista</string>
     <string name="button_find">Procurar</string>
     <string name="hint_input">Digite o nome do artista</string>
+    <string name="tab1">Procurar</string>
+    <string name="tab2">Favoritos</string>
 </resources>

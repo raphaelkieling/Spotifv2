@@ -1,11 +1,8 @@
 package com.example.kieling.spotif;
 
-import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
-import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.EditText;
 
@@ -19,13 +16,10 @@ import com.example.kieling.spotif.domain.search.SearchArtistResponse;
 import java.util.ArrayList;
 import java.util.List;
 
-import okhttp3.OkHttpClient;
-import okhttp3.logging.HttpLoggingInterceptor;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
-import retrofit2.Retrofit;
-import retrofit2.converter.gson.GsonConverterFactory;
+
 import android.widget.ListView;
 import android.widget.ProgressBar;
 
@@ -42,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        nomeArtista = findViewById(R.id.nomeArtista);
+        nomeArtista = findViewById(R.id.palavraItem);
         listaArtistas = findViewById(R.id.listaArtistas);
 
         procurar = findViewById(R.id.procurar);

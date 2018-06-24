@@ -21,11 +21,11 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/nomeArtista"
+        android:id="@+id/palavraItem"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="8dp"
-        android:layout_marginStart="8dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginStart="16dp"
         android:ems="10"
         android:hint="@string/hint_input"
         android:inputType="textPersonName"
@@ -43,12 +43,12 @@
         android:layout_marginTop="4dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/nomeArtista" />
+        app:layout_constraintTop_toBottomOf="@+id/palavraItem" />
 
     <Button
         android:id="@+id/procurar"
         style="@style/Widget.AppCompat.Button.ButtonBar.AlertDialog"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
         android:layout_marginLeft="8dp"
@@ -56,7 +56,7 @@
         android:layout_marginStart="8dp"
         android:text="@string/button_find"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/nomeArtista"
+        app:layout_constraintStart_toEndOf="@+id/palavraItem"
         app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
     <ProgressBar
@@ -72,5 +72,7 @@
         android:layout_marginTop="36dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/nomeArtista" />
+        app:layout_constraintTop_toBottomOf="@+id/palavraItem" />
+
+
 </android.support.constraint.ConstraintLayout>

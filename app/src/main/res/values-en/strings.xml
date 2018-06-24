@@ -4,4 +4,6 @@
     <string name="label_find">Find your artist</string>
     <string name="button_find">Find</string>
     <string name="hint_input">Enter artist name</string>
+    <string name="tab1">Search Music</string>
+    <string name="tab2">Favorites Musics</string>
 </resources>

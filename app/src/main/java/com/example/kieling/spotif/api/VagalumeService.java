@@ -1,6 +1,7 @@
 package com.example.kieling.spotif.api;
 
 import com.example.kieling.spotif.domain.album.AlbumResponse;
+import com.example.kieling.spotif.domain.music.MusicResponse;
 import com.example.kieling.spotif.domain.search.SearchArtist;
 
 import retrofit2.Call;
@@ -17,4 +18,10 @@ public interface VagalumeService {
                                            @Query("limit") Number limit);
     @GET("{nomeArtista}/discografia/index.js")
     Call<AlbumResponse> discografiaArtista(@Path("nomeArtista") String nomeArtista);
+
+    @GET("search.php")
+    Call<MusicResponse> music(@Query("apikey") String key,
+                              @Query("musid") String musicId);
 }
+
+//musid

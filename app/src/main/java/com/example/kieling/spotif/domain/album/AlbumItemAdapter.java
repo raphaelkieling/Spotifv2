@@ -1,6 +1,8 @@
 package com.example.kieling.spotif.domain.album;
 
 import android.content.Context;
+import android.content.Intent;
+import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,9 +13,11 @@ import android.widget.TextView;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.bumptech.glide.request.RequestOptions;
+import com.example.kieling.spotif.MusicsActivity;
 import com.example.kieling.spotif.R;
 import com.example.kieling.spotif.api.VagalumeAPI;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class AlbumItemAdapter extends BaseAdapter {
@@ -44,7 +48,7 @@ public class AlbumItemAdapter extends BaseAdapter {
     public View getView(int i, View view, ViewGroup viewGroup) {
 
         View gridView = view;
-        AlbumItem albumItem = items.get(i);
+        final AlbumItem albumItem = items.get(i);
 
         if(view == null){
             inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
@@ -57,7 +61,25 @@ public class AlbumItemAdapter extends BaseAdapter {
         RequestOptions requestOptions = new RequestOptions();
         requestOptions.diskCacheStrategy(DiskCacheStrategy.RESOURCE);
 
+        gridView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                ArrayList<DiscoItem> discos = new ArrayList<>();
 
+                for(List<DiscoItem> listaDiscos:albumItem.getDiscs()){
+                    for(DiscoItem disco:listaDiscos){
+                        discos.add(disco);
+                    }
+                }
+
+                Intent intent = new Intent(view.getContext(), MusicsActivity.class);
+                Bundle bundle = new Bundle();
+                bundle.putSerializable("discos",discos);
+                intent.putExtras(bundle);
+
+                view.getContext().startActivity(intent);
+            }
+        });
         Glide.with(context)
                 .load(VagalumeAPI.url+albumItem.getCover())
                 .apply(requestOptions)

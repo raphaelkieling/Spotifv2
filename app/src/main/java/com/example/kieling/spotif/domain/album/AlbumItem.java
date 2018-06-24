@@ -1,11 +1,21 @@
 package com.example.kieling.spotif.domain.album;
 
-public class AlbumItem {
+import java.io.Serializable;
+import java.util.List;
+
+public class AlbumItem implements Serializable{
     String id;
     String desc;
     String url;
     String cover;
     String label;
+    List<List<DiscoItem>> discs;
+
+    public List<List<DiscoItem>> getDiscs() {
+        return discs;
+    }
+
+
 
     public String getId() {
         return id;

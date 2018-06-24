@@ -21,7 +21,7 @@
         app:layout_constraintTop_toTopOf="@+id/gridAlbums" />
 
     <TextView
-        android:id="@+id/nomeArtista"
+        android:id="@+id/palavraItem"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
@@ -46,7 +46,7 @@
         android:text="Albuns"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/nomeArtista" />
+        app:layout_constraintTop_toBottomOf="@+id/palavraItem" />
 
     <GridView
         android:id="@+id/gridAlbums"

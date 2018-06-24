@@ -1,7 +1,5 @@
 package com.example.kieling.spotif;
 
-import android.app.ActionBar;
-import android.content.Context;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -16,10 +14,11 @@ import com.example.kieling.spotif.api.VagalumeService;
 import com.example.kieling.spotif.domain.album.AlbumItem;
 import com.example.kieling.spotif.domain.album.AlbumItemAdapter;
 import com.example.kieling.spotif.domain.album.AlbumResponse;
+import com.example.kieling.spotif.domain.album.DiscoItem;
 import com.example.kieling.spotif.domain.album.DiscographyResponse;
-import com.example.kieling.spotif.domain.search.SearchArtist;
 import com.example.kieling.spotif.domain.search.SearchArtistItem;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import retrofit2.Call;
@@ -41,7 +40,7 @@ public class AlbunsActivity extends AppCompatActivity {
         Bundle extras = getIntent().getExtras();
         artista = (SearchArtistItem) extras.getSerializable("artist");
 
-        nomeArtista = findViewById(R.id.nomeArtista);
+        nomeArtista = findViewById(R.id.palavraItem);
         nomeArtista.setText(artista.getBand());
 
         gridView = findViewById(R.id.gridAlbums);
@@ -63,12 +62,10 @@ public class AlbunsActivity extends AppCompatActivity {
                 DiscographyResponse discography =  res.getDiscography();
                 List<AlbumItem> items =  discography.getItem();
 
+
                 AlbumItemAdapter gridAdapter = new AlbumItemAdapter(AlbunsActivity.this,items);
                 gridView.setAdapter(gridAdapter);
 
-                for(AlbumItem item:items){
-                    Log.d("ITEM",item.getDesc());
-                }
                 progressBar2.setVisibility(View.INVISIBLE);
             }
 

@@ -6,4 +6,6 @@
     <string name="hint_input">Enter artist name</string>
     <string name="tab1">Search Music</string>
     <string name="tab2">Favorites Musics</string>
+    <string name="save">Save</string>
+    <string name="saved">Saved</string>
 </resources>

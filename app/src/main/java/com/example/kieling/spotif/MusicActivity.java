@@ -50,10 +50,10 @@ public class MusicActivity extends AppCompatActivity {
                     MusicItem musicBdUnique  = musicDAO.queryForId(musicItem.getId());
                     if(musicBdUnique != null){
                         musicDAO.delete(musicItem);
-                        btnSave.setText("Salvar");
+                        btnSave.setText(R.string.save);
                     }else{
                         musicDAO.create(musicItem);
-                        btnSave.setText("Salvo");
+                        btnSave.setText(R.string.saved);
                     }
 
                 } catch (SQLException e) {
